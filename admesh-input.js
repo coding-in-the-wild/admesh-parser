@@ -84,7 +84,7 @@ var runAdmeshAndGiveResults = function(admeshDir, fullFileName) {
 			}
 			
 		/*child2.on('message', function(m) {
-			console.log('CHILD got message:', m);
+			console.log('CHILD2 got message:', m);
 		});*/
 			
 		}
