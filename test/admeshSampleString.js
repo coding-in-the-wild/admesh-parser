@@ -14,13 +14,13 @@ Facets with 3 disconnected edges :     0                   0\
 Total disconnected facets        :    21                   0\
 === Processing Statistics ===     ===== Other Statistics =====\
 Number of parts       :     1        Volume   :  10.889216\
-Degenerate facets     :     0\
+Degenerate facets     :     4\
 Edges fixed           :    24\
-Facets removed        :     0\
-Facets added          :     0\
-Facets reversed       :     0\
+Facets removed        :    14\
+Facets added          :     3\
+Facets reversed       :     2\
 Backwards edges       :     0\
-Normals fixed         :     0"
+Normals fixed         :     12"
 
 
 /* **********helpful things********** *\
