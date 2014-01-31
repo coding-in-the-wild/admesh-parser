@@ -57,7 +57,7 @@
 }
 
 
-var runAdmeshAndGiveResults = function(admeshDir, fullFileName) {
+var runAdmeshAndGiveResults = function(admeshDir, fullFileNameAndDir, admeshOpts) {
 	var cp = require('child_process')
 	var child, child2
 	var theVariable = 0
@@ -69,7 +69,8 @@ var runAdmeshAndGiveResults = function(admeshDir, fullFileName) {
 				console.log('exec 1 error: ' + error);
 				calledBack = true;
 			} else {
-				child2 = cp.exec("admesh.exe"+" "+fullFileName,
+				admeshOpts = (typeof admeshOpts === 'string')? admeshOpts : "";
+				child2 = cp.exec("admesh.exe "+admeshOpts+" "+fullFileNameAndDir,
 					function (error, stdout, stderr) {
 						calledBack = true;
 						if (error !== null) {
@@ -101,7 +102,7 @@ if (false) { //true->normal   false->test
 } else if (false) {
 	console.log(convertStrToObj(require("./admesh-out-test-string.js")))
 } else {
-	console.log("official:\n"+runAdmeshAndGiveResults("C:\\Github\\admesh-to-js-obj\\","companion-cube-2.stl")+"\n\nunofficial:")
+	console.log("official:\n"+runAdmeshAndGiveResults("C:\\Github\\admesh-to-js-obj\\","C:\\Github\\admesh-to-js-obj\\companion-cube-2.stl")+"\n\nunofficial:")
 }
 
 
