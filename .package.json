@@ -1,0 +1,29 @@
+{
+  "name": "admesh-to-js-obj,
+  "version": "0.1.1",
+  "main": "./runAdmesh.js",
+  "author": {
+    "name": "ArtskydJ",
+    "email": "josephdykstra@gmail.com"
+  },
+  "description": "n/a",
+  "keywords": [
+    "admesh",
+    "parse"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArtskydJ/admesh-str-to-obj.git"
+  },
+  "devDependencies": {
+    "tap": "~0.4.8"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap ./test/*.js"
+  },
+  "dependencies": {
+  }
+}
