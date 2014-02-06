@@ -2,14 +2,14 @@ var runAdmesh = require("../runAdmesh.js")
 var test = require('tap').test
 
 var admeshDirectory =
-	"C:\\Users\\Joseph\\Documents\\Github\\admesh-to-js-obj\\"
-	//admeshDirectory = "C:\\Github\\admesh-to-js-obj\\"
+	//"C:\\Users\\Joseph\\Documents\\Github\\admesh-to-js-obj\\"
+	"C:\\Github\\admesh-to-js-obj\\"
 var ccFileAndDirectory =
-	"C:\\Users\\Joseph\\Documents\\Github\\admesh-to-js-obj\\companion-cube.stl"
-	//"C:\\Github\\admesh-to-js-obj\\"
+	//"C:\\Users\\Joseph\\Documents\\Github\\admesh-to-js-obj\\companion-cube.stl"
+	"C:\\Github\\admesh-to-js-obj\\companion-cube.stl"
 var ccFileAndDirectory2 =
-	"C:\\Users\\Joseph\\Documents\\Github\\admesh-to-js-obj\\companion-cube-2.stl"
-	//"C:\\Github\\admesh-to-js-obj\\companion-cube-2.stl"
+	//"C:\\Users\\Joseph\\Documents\\Github\\admesh-to-js-obj\\companion-cube-2.stl"
+	"C:\\Github\\admesh-to-js-obj\\companion-cube-2.stl"
 
 
 var compareObjects = function(testObj, goodObj) {

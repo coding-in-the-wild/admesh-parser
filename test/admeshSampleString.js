@@ -21,11 +21,3 @@ Facets added          :     3\
 Facets reversed       :     2\
 Backwards edges       :     0\
 Normals fixed         :     12"
-
-
-/* **********helpful things********** *\
-http://nodejs.org/api/stream.html#stream_stream_push
-http://nodejs.org/api/process.html#process_process_stdout
-http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback
-https://sites.google.com/a/varlog.com/www/admesh-htm
-\* ********************************** */
