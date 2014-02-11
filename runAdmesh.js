@@ -1,11 +1,14 @@
 ﻿var convertStrToObj = require("./admeshStringParser.js")
 
-module.exports = function(admeshDir, fullFileNameAndDir, callback) {
+module.exports = function convertAdmesh(admeshDir, options, callback) {
 	var cp = require('child_process')
 	var child
 	var calledBack = false
+	
+	if (typeof options === "string")
+		options = [options]
 
-	child = cp.exec(admeshDir+"admesh.exe "+fullFileNameAndDir,
+	child = cp.exec(admeshDir+" "+options.join(" "),
 		function (error, stdout, stderr) {
 			if (error) {
 				callback(error)
