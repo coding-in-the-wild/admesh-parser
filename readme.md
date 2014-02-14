@@ -4,7 +4,6 @@
 
 + Info
 + Usage
-+ More
 
 ##Info
 
