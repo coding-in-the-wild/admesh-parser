@@ -1,14 +1,10 @@
 ﻿#Admesh Parser
 
----
-
 ##Table of Contents
 
 + Info
 + Usage
 + More
-
----
 
 ##Info
 
@@ -30,8 +26,6 @@ This program is designed to take an STL file and return a JavaScript object. The
 + Number of parts
 + Number of fixed edges
 + Number of backwards edges
-
----
 
 ##Usage
 
