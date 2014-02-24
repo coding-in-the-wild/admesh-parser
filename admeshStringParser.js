@@ -14,9 +14,6 @@ module.exports = function (str) { //expects one long string (with or without \n 
 		detectedNums.push(temp[0])
 	}
 	
-	result.inputFile = reFileName.exec(strArr[0])[1]
-	result.processedByVersion = reFloat.exec(strArr[0])[1]
-	
 	if (detectedNums.length === 28) {
 		result.x.min = parseFloat(detectedNums[0])
 		result.x.max = parseFloat(detectedNums[1])
