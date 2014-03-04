@@ -1,4 +1,4 @@
-module.exports = function (str) { //expects one long string (with or without \n chars)
+module.exports = function parser(str) { //expects one long string (with or without \n chars)
 	var reFloat = /\s(-?\d[\d\.]*)/g //allows multiple periods. parseFloat() ignores digits after the 2nd period.
 	var reFileName = /([\w-]+\.[A-z]{3})/
 	var result = {
