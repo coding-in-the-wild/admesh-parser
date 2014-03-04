@@ -11,16 +11,16 @@ module.exports = function (str) { //expects one long string (with or without \n 
 	var temp
 	var detectedNums = []
 	while ((temp = reFloat.exec(strArr[1])) !== null) {
-		detectedNums.push(temp[0])
+		detectedNums.push(parseFloat(temp[0]))
 	}
 	
 	if (detectedNums.length === 28) {
-		result.x.min = parseFloat(detectedNums[0])
-		result.x.max = parseFloat(detectedNums[1])
-		result.y.min = parseFloat(detectedNums[2])
-		result.y.max = parseFloat(detectedNums[3])
-		result.z.min = parseFloat(detectedNums[4])
-		result.z.max = parseFloat(detectedNums[5])
+		result.x.min = detectedNums[0]
+		result.x.max = detectedNums[1]
+		result.y.min = detectedNums[2]
+		result.y.max = detectedNums[3]
+		result.z.min = detectedNums[4]
+		result.z.max = detectedNums[5]
 		
 		result.facets.overall.before = parseInt(detectedNums[6])
 		result.facets.overall.after  = parseInt(detectedNums[7])
@@ -37,12 +37,14 @@ module.exports = function (str) { //expects one long string (with or without \n 
 		result.facets.added =          parseInt(detectedNums[24])
 		result.facets.reversed =       parseInt(detectedNums[25])
 		
-		result.volume =          parseFloat(detectedNums[20])
+		result.volume =          detectedNums[20]
 		
 		result.parts =           parseInt(detectedNums[19])
 		result.edges.fixed =     parseInt(detectedNums[22])
 		result.edges.backwards = parseInt(detectedNums[26])
 		result.normalsFixed =    parseInt(detectedNums[27])
+		
+		result.all = detectedNums
 		
 		return result
 	} else {
