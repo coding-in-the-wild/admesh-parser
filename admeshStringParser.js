@@ -48,7 +48,6 @@ module.exports = function parser(str) { //expects one long string (with or witho
 		
 		return result
 	} else {
-		//throw new Error("Incorrect count of numbers found in string")
-		return -1
+		return new Error("Incorrect count of numbers found in string")
 	}	
 }

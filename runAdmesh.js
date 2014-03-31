@@ -3,14 +3,11 @@
 module.exports = function convertAdmesh(admeshDir, options, callback) {
 	if (typeof options === "string")
 		options = [options]
-
-	require('child_process').exec(admeshDir+" "+options.join(" "),
-		function (error, stdout, stderr) {
-			if (error) {
-				callback(error)
-			} else {
-				callback(false, convertStrToObj(stdout))
-			}
-		}
-	)
+	
+	if (!admeshDir)
+		admeshDir = 'C:/Github/admesh-parser/admesh.exe'
+	
+	require('child_process').exec(admeshDir+" "+options.join(" "), function (err, stdout, stderr) {
+		callback(err, convertStrToObj(stdout))
+	})
 }
