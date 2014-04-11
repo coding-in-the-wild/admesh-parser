@@ -29,13 +29,12 @@ This program is designed to take an STL file and return a JavaScript object. The
 ##Usage
 
 To use this module, you will need [admesh](https://sites.google.com/a/varlog.com/www/admesh-htm).  
-Admesh must be in admesh-parser folder, or its directory must be listed in the [PATH](https://en.wikipedia.org/wiki/Path_(variable\) "Wikipedia - PATH (Variable)").
 
 You will also need an STL file to run this on. Two files are included in the 'test' folder.
 
 **Include:**
 
-	var admeshParser = require("./runAdmesh.js")
+	var admeshParser = require('admesh-parser')
 
 **Options:**
 
