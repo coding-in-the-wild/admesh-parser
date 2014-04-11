@@ -21,8 +21,8 @@ test("parser throws errors", function(t) {
 		"Number of parts       :     1        Volume   :  10.889216\n"
 	)
 	test("parser throws error for not enough args", function (t) {
-		t.equal(typeof obj, "number")
-		t.equal(obj, -1)
+		t.equal(typeof obj, "object")
+		t.equal(obj.message, "Incorrect count of numbers found in string")
 		t.end()
 	})
 	
@@ -54,8 +54,8 @@ test("parser throws errors", function(t) {
 		"4 8 15 16 23 42" //As of 2013-02-10 I have not seen the show.
 	)
 	test("parser throws error for too many args", function (t) {
-		t.equal(typeof obj, "number")
-		t.equal(obj, -1)
+		t.equal(typeof obj, "object")
+		t.equal(obj.message, "Incorrect count of numbers found in string")
 		t.end()
 	})
 	
