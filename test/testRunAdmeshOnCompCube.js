@@ -1,6 +1,6 @@
-var runAdmesh = require("..\\runAdmesh.js")
+var admeshDir = '"C:\\Program Files (x86)\\admesh\\admesh.exe"'
+var runAdmesh = require("../runAdmesh.js")
 var test = require('tap').test
-var admeshDir =		"..\\admesh"
 var compCubeDirs =	[".\\companion-cube.stl", ".\\companion-cube-2.stl"]
 
 
@@ -26,7 +26,7 @@ test("run admesh on companion cube 1", function(t) {
 		volume:0, edges:{backwards:0}, normalsFixed:6}
 	
 	runAdmesh(admeshDir, compCubeDirs[0], function(err, testObj) {
-		t.notOk(err)
+		t.notOk(err, "error is falsey"+(err||err.message))
 		compareObjects(testObj, correctValues_cc, "Companion Cube #1")
 		t.end()
 	})
