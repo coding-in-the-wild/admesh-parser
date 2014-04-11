@@ -1,6 +1,6 @@
 {
-  "name": "admesh-to-js-obj",
-  "version": "0.1.2",
+  "name": "admesh-parser",
+  "version": "1.0.0",
   "main": "./runAdmesh.js",
   "author": {
     "name": "ArtskydJ",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArtskydJ/admesh-str-to-obj.git"
+    "url": "https://github.com/coding-in-the-wild/admesh-parser.git"
   },
   "devDependencies": {
     "tap": "~0.4.8"

@@ -4,14 +4,14 @@ var admeshDir =		"..\\admesh"
 var compCubeDirs =	[".\\companion-cube.stl", ".\\companion-cube-2.stl"]
 
 
-var compareObjects = function(testObj, goodObj) {
-	test("SIZES for this stl file match", function(t) {
+var compareObjects = function(testObj, goodObj, prefixString) {
+	test("SIZES for "+(prefixString||"this stl file")+" match", function(t) {
 		t.equal(testObj.x.min, goodObj.x.min)
 		t.equal(testObj.y.min, goodObj.y.min)
 		t.end()
 	})
 	
-	test("MORE NUMBERS for this stl file match", function(t) {
+	test("MORE NUMBERS "+(prefixString||"this stl file")+" match", function(t) {
 		t.equal(testObj.parts,				goodObj.parts)
 		t.equal(testObj.volume,				goodObj.volume)
 		t.equal(testObj.edges.backwards,	goodObj.edges.backwards)
@@ -27,7 +27,7 @@ test("run admesh on companion cube 1", function(t) {
 	
 	runAdmesh(admeshDir, compCubeDirs[0], function(err, testObj) {
 		t.notOk(err)
-		compareObjects(testObj, correctValues_cc)
+		compareObjects(testObj, correctValues_cc, "Companion Cube #1")
 		t.end()
 	})
 })
@@ -39,7 +39,7 @@ test("run admesh on companion cube 2", function(t) {
 	
 	runAdmesh(admeshDir, compCubeDirs[1], function(err, testObj) {
 		t.notOk(err)
-		compareObjects(testObj, correctValues_cc2)
+		compareObjects(testObj, correctValues_cc2, "Companion Cube #2")
 		t.end()
 	})
 })

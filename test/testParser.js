@@ -27,12 +27,6 @@ test("parser returns correct numbers", function(t) {
 		"Backwards edges       :     0\n"+
 		"Normals fixed         :     12")
 	
-	test("parser gets correct processed version and input name", function (t) {
-		t.equal(obj.processedByVersion,"0.97.3")
-		t.equal(obj.inputFile,"sphere.stl")
-		t.end()
-	})
-	
 	test("parser gets correct sizes", function (t) {
 		t.equal(obj.x.min, -1.334557)
 		t.equal(obj.y.min, -1.377953)
