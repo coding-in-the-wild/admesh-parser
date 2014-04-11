@@ -9,7 +9,6 @@
 
 This program is designed to take an STL file and return a JavaScript object. The object contains information about the file including:  
 
-+ Version of Admesh used
 + Dimensions
  - X (Min, Max)
  - Y (Min, Max)
