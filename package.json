@@ -1,7 +1,7 @@
 {
   "name": "admesh-parser",
   "version": "1.0.0",
-  "main": "./runAdmesh.js",
+  "main": "./index.js",
   "author": {
     "name": "ArtskydJ",
     "email": "josephdykstra@gmail.com"
