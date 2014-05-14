@@ -8,13 +8,15 @@ module.exports = function parser(str) { //expects one long string (with or witho
 	}
 
 	var strArr = str.split("===== Size =====")
-	var temp
-	var detectedNums = []
-	while ((temp = reFloat.exec(strArr[1])) !== null) {
-		detectedNums.push(parseFloat(temp[0]))
+	if (strArr.length === 2) {
+		var temp
+		var detectedNums = []
+		while ((temp = reFloat.exec(strArr[1])) !== null) {
+			detectedNums.push(parseFloat(temp[0]))
+		}
 	}
 	
-	if (detectedNums.length === 28) {
+	if (detectedNums.length === 28 && strArr.length === 2) {
 		result.x.min = detectedNums[0]
 		result.x.max = detectedNums[1]
 		result.y.min = detectedNums[2]
@@ -48,6 +50,8 @@ module.exports = function parser(str) { //expects one long string (with or witho
 		
 		return result
 	} else {
-		return new Error("Incorrect count of numbers found in string")
+		var err = new Error("Unparseable string: "+strArr.length+", "+detectedNums.length)
+		err.detectedNums = detectedNums.length
+		return err
 	}	
 }
