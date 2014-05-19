@@ -113,4 +113,3 @@ You will also need an STL file to run this on. Two files are included in the 'te
 	console.log("Max X: " + model.x.max)
 	console.log("Num of facets, before: " + model.facets.overall.before)
 	console.log("Volume: " + model.volume)
-	console.log("Admesh version: " + model.processedByVersion)
