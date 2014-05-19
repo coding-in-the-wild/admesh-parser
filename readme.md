@@ -2,69 +2,115 @@
 
 ##Table of Contents
 
-+ Info
-+ Usage
+- Description
+- You Can't Use This Until You Download More Stuff
+- Install
+- Include
+- admeshParser()
+	- admeshDirectory
+	- options
+	- Returns
+- Example
 
-##Info
+##Description
 
-This program is designed to take an STL file and return a JavaScript object. The object contains information about the file including:  
+This module returns a function that takes an STL file and returns a JavaScript object containing information about the file. 
 
-+ Dimensions
- - X (Min, Max)
- - Y (Min, Max)
- - Z (Min, Max)
-+ Facets, Number of:
- - Overall (Before, After)
- - Disconnected (Before, After)
- - Degenerate
- - Removed
- - Added
- - Reversed
-+ 3D Volume (in mm)
-+ Number of parts
-+ Number of fixed edges
-+ Number of backwards edges
+##You Can't Use This Until You Download More Stuff
 
-##Usage
-
-To use this module, you will need [admesh](https://sites.google.com/a/varlog.com/www/admesh-htm).  
+To use this module, you will need [admesh](https://sites.google.com/a/varlog.com/www/admesh-htm). This module just parses the output, it does not include the binary.
 
 You will also need an STL file to run this on. Two files are included in the 'test' folder.
 
-**Include:**
+##Install
+
+	npm install admesh-parser
+
+##Include
 
 	var admeshParser = require('admesh-parser')
 
-**Options:**
+##admeshParser(admeshDirectory, options)
+- **admeshDirectory** (String) 
 
-	var options = [
-		"--remove-unconnected",
-		"--fill-holes",
-		"C:\\Users\\Me\\Documents\\gear.stl"
-	] //The last element must be a string of the input file directory
+	`'C:\\Users\\Me\\Documents\\admesh.exe'`
 
-**No options:**  
-Well, you still need the input file!  
+- **options** (Array or String)  
+	The last element must be a string of the input file directory
 
-`options = ["C:\\Users\\Me\\Documents\\gear.stl"]`  
-*or*  
-`options =  "C:\\Users\\Me\\Documents\\gear.stl"`
+		var options
+		options = [
+			"--remove-unconnected",
+			"--fill-holes",
+			"C:\\Users\\Me\\Documents\\gear.stl"
+		]
+		//or
+		options = ["C:\\Users\\Me\\Documents\\gear.stl"]
+		//or
+		options =  'C:\\Users\\Me\\Documents\\gear.stl'
 
-The options argument can be either a string, or an array of strings.
+	The options argument can be either a string, or an array of strings.
 
-**Parse:**
+- **Returns**
 
-	var gear = admeshParser(
+		{ x: { min: -1.334557, max: 1.370952 },
+		  y: { min: -1.377953, max: 1.37723 },
+		  z: { min: -1.373225, max: 1.242838 },
+		  facets: 
+		   { overall: { before: 3656, after: 3656 },
+		     disconnected1: { before: 18, after: 0 },
+		     disconnected2: { before: 3, after: 0 },
+		     disconnected3: { before: 0, after: 0 },
+		     disconnected: { before: 21, after: 0 },
+		     degenerate: 4,
+		     removed: 14,
+		     added: 3,
+		     reversed: 2 },
+		  edges: { fixed: 24, backwards: 0 },
+		  volume: 10.889216,
+		  parts: 1,
+		  normalsFixed: 12,
+		  all: 
+		   [ -1.334557,
+		     1.370952,
+		     -1.377953,
+		     1.37723,
+		     -1.373225,
+		     1.242838,
+		     3656,
+		     3656,
+		     1,
+		     18,
+		     0,
+		     2,
+		     3,
+		     0,
+		     3,
+		     0,
+		     0,	
+		     21,
+		     0,
+		     1,
+		     10.889216,
+		     4,
+		     24,
+		     14,
+		     3,
+		     2,
+		     0,
+		     12 ] }
+    
+
+##Example
+
+	var model = admeshParser(
 		"C:\\Program Files\\admesh\\admesh.exe", //Admesh dir
-		options
+		"C:\\Users\\Me\\Documents\\gear.stl" //Options (model dir)
 	)
 
-**Get Info:**
-
-	console.log("Number of parts: " + gear.parts)
-	console.log("Min X: " + gear.x.min)
-	console.log("Max X: " + gear.x.max)
-	console.log("Num of facets, before: " + gear.facets.overall.before)
-	console.log("Volume: " + gear.volume)
-	console.log("Admesh version: " + gear.processedByVersion)
-	//Etc.
+	console.log("Number of parts: " + model.parts)
+	console.log("Min X: " + model.x.min)
+	console.log("Max X: " + model.x.max)
+	console.log("Num of facets, before: " + model.facets.overall.before)
+	console.log("Volume: " + model.volume)
+	console.log("Admesh version: " + model.processedByVersion)
