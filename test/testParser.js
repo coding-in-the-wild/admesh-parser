@@ -1,5 +1,5 @@
 var test = require('tap').test
-var parser = require("../admeshStringParser.js")
+var parser = require("../parser.js")
 
 test("parser returns correct numbers", function(t) {
 	var obj = parser(

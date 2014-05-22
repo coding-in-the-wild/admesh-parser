@@ -1,7 +1,9 @@
-var admeshDir = '"C:\\Program Files (x86)\\admesh\\admesh.exe"'
-var runAdmesh = require("../runAdmesh.js")
+var admeshDir = 'C:/Program Files (x86)/admesh/admesh.exe'
+var Admesh = require('../index.js')
+var admesh = new Admesh(admeshDir)
 var test = require('tap').test
-var compCubeDirs =	[".\\companion-cube.stl", ".\\companion-cube-2.stl"]
+var safeErrMsg = require('safe-err-msg')
+var compCubeDirs =	["./companion-cube.stl", "./companion-cube-2.stl"]
 
 
 var compareObjects = function(testObj, goodObj, prefixString) {
@@ -25,8 +27,8 @@ test("run admesh on companion cube 1", function(t) {
 	var correctValues_cc = {x:{min:12.825}, y:{min:20.82688}, parts:1,
 		volume:0, edges:{backwards:0}, normalsFixed:6}
 	
-	runAdmesh(admeshDir, compCubeDirs[0], function(err, testObj) {
-		t.notOk(err, "error is falsey"+(err||err.message))
+	admesh(compCubeDirs[0], function(err, testObj) {
+		t.notOk(err, "error is falsey"+safeErrMsg(err))
 		compareObjects(testObj, correctValues_cc, "Companion Cube #1")
 		t.end()
 	})
@@ -37,8 +39,8 @@ test("run admesh on companion cube 2", function(t) {
 	var correctValues_cc2 = {x:{min:-21.346926}, y:{min:-25.001492}, parts:7,
 		volume:33.482048, edges:{backwards:0}, normalsFixed:16}
 	
-	runAdmesh(admeshDir, compCubeDirs[1], function(err, testObj) {
-		t.notOk(err)
+	admesh(compCubeDirs[1], function(err, testObj) {
+		t.notOk(err, "error is falsey"+safeErrMsg(err))
 		compareObjects(testObj, correctValues_cc2, "Companion Cube #2")
 		t.end()
 	})
