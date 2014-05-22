@@ -26,7 +26,7 @@ You will also need an STL file to run this on. Two files are included in the 'te
 ##Include
 
 	var AdmeshParser = require('admesh-parser')
-	var admeshParser = new AdmeshParser('C:\\Users\\Me\\Documents\\admesh.exe') //Admesh Directory
+	var admeshParser = new AdmeshParser('C:\\Users\\Me\\Documents\\admesh.exe') //Admesh Directory (spaces allowed)
 
 ##admeshParser(options, cb)
 

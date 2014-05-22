@@ -1,4 +1,4 @@
-var admeshDir = '"C:/Program Files (x86)/admesh/admesh.exe"'
+var admeshDir = 'C:/Program Files (x86)/admesh/admesh.exe'
 var Admesh = require('../index.js')
 var admesh = new Admesh(admeshDir)
 var test = require('tap').test
