@@ -6,10 +6,7 @@
 - You Can't Use This Until You Download More Stuff
 - Install
 - Include
-- admeshParser()
-	- admeshDirectory
-	- options
-	- Returns
+- admeshParser(options, cb)
 - Example
 
 ##Description
@@ -37,6 +34,7 @@ You will also need an STL file to run this on. Two files are included in the 'te
 The last element must be a string of the input file directory
 
 	var options
+	
 	options = [
 		"--remove-unconnected",
 		"--fill-holes",
@@ -49,8 +47,9 @@ The last element must be a string of the input file directory
 
 The options argument can be either a string, or an array of strings.
 
-**Returns**
+**cb(err, result)**
 
+	//Result should look something like this:
 	{ x: { min: -1.334557, max: 1.370952 },
 	  y: { min: -1.377953, max: 1.37723 },
 	  z: { min: -1.373225, max: 1.242838 },

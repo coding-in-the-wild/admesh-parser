@@ -13,12 +13,18 @@ module.exports = function parser(str) { //expects one long string (with or witho
 	}
 	
 	if (detectedNums.length === 28 && strArr.length === 2) {
-		result.x.min = detectedNums[0]
-		result.x.max = detectedNums[1]
-		result.y.min = detectedNums[2]
-		result.y.max = detectedNums[3]
-		result.z.min = detectedNums[4]
-		result.z.max = detectedNums[5]
+		result.x = {
+			min: detectedNums[0],
+			max: detectedNums[1]
+		}
+		result.y = {
+			min: detectedNums[2],
+			max: detectedNums[3]
+		}
+		result.z = {
+			min: detectedNums[4],
+			max: detectedNums[5]
+		}
 		
 		result.facets = {
 			overall: {
@@ -50,7 +56,7 @@ module.exports = function parser(str) { //expects one long string (with or witho
 		
 		result.parts = parseInt(detectedNums[19])
 		result.edges = {
-			fixed: parseInt(detectedNums[22])
+			fixed: parseInt(detectedNums[22]),
 			backwards: parseInt(detectedNums[26])
 		}
 		result.normalsFixed = parseInt(detectedNums[27])
