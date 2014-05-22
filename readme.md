@@ -28,85 +28,54 @@ You will also need an STL file to run this on. Two files are included in the 'te
 
 ##Include
 
-	var admeshParser = require('admesh-parser')
+	var AdmeshParser = require('admesh-parser')
+	var admeshParser = new AdmeshParser('C:\\Users\\Me\\Documents\\admesh.exe') //Admesh Directory
 
-##admeshParser(admeshDirectory, options)
-- **admeshDirectory** (String) 
+##admeshParser(options, cb)
 
-	`'C:\\Users\\Me\\Documents\\admesh.exe'`
+**options** (Array or String)  
+The last element must be a string of the input file directory
 
-- **options** (Array or String)  
-	The last element must be a string of the input file directory
+	var options
+	options = [
+		"--remove-unconnected",
+		"--fill-holes",
+		"C:\\Users\\Me\\Documents\\gear.stl"
+	]
+	//or
+	options = ["C:\\Users\\Me\\Documents\\gear.stl"]
+	//or
+	options =  'C:\\Users\\Me\\Documents\\gear.stl'
 
-		var options
-		options = [
-			"--remove-unconnected",
-			"--fill-holes",
-			"C:\\Users\\Me\\Documents\\gear.stl"
-		]
-		//or
-		options = ["C:\\Users\\Me\\Documents\\gear.stl"]
-		//or
-		options =  'C:\\Users\\Me\\Documents\\gear.stl'
+The options argument can be either a string, or an array of strings.
 
-	The options argument can be either a string, or an array of strings.
+**Returns**
 
-- **Returns**
-
-		{ x: { min: -1.334557, max: 1.370952 },
-		  y: { min: -1.377953, max: 1.37723 },
-		  z: { min: -1.373225, max: 1.242838 },
-		  facets: 
-		   { overall: { before: 3656, after: 3656 },
-		     disconnected1: { before: 18, after: 0 },
-		     disconnected2: { before: 3, after: 0 },
-		     disconnected3: { before: 0, after: 0 },
-		     disconnected: { before: 21, after: 0 },
-		     degenerate: 4,
-		     removed: 14,
-		     added: 3,
-		     reversed: 2 },
-		  edges: { fixed: 24, backwards: 0 },
-		  volume: 10.889216,
-		  parts: 1,
-		  normalsFixed: 12,
-		  all: 
-		   [ -1.334557,
-		     1.370952,
-		     -1.377953,
-		     1.37723,
-		     -1.373225,
-		     1.242838,
-		     3656,
-		     3656,
-		     1,
-		     18,
-		     0,
-		     2,
-		     3,
-		     0,
-		     3,
-		     0,
-		     0,	
-		     21,
-		     0,
-		     1,
-		     10.889216,
-		     4,
-		     24,
-		     14,
-		     3,
-		     2,
-		     0,
-		     12 ] }
+	{ x: { min: -1.334557, max: 1.370952 },
+	  y: { min: -1.377953, max: 1.37723 },
+	  z: { min: -1.373225, max: 1.242838 },
+	  facets: 
+	   { overall: { before: 3656, after: 3656 },
+	     disconnected1: { before: 18, after: 0 },
+	     disconnected2: { before: 3, after: 0 },
+	     disconnected3: { before: 0, after: 0 },
+	     disconnected: { before: 21, after: 0 },
+	     degenerate: 4,
+	     removed: 14,
+	     added: 3,
+	     reversed: 2 },
+	  edges: { fixed: 24, backwards: 0 },
+	  volume: 10.889216,
+	  parts: 1,
+	  normalsFixed: 12 }
     
 
 ##Example
-
-	var model = admeshParser(
-		"C:\\Program Files\\admesh\\admesh.exe", //Admesh dir
-		"C:\\Users\\Me\\Documents\\gear.stl" //Options (model dir)
-	)
+	
+	var AdmeshParser = require('admesh-parser')
+	var admeshParser = new AdmeshParser('C:\\Users\\Me\\Documents\\admesh.exe') //Admesh Directory
+	
+	var model = admeshParser("C:\\Users\\Me\\Documents\\gear.stl") //Options (model dir)
 
 	console.log("Number of parts: " + model.parts)
 	console.log("Min X: " + model.x.min)
