@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/ArtskydJ/admesh-parser.svg?branch=master)](https://travis-ci.org/ArtskydJ/admesh-parser)
 
-- [Description]
+- [Description](https://github.com/ArtskydJ/admesh-parser#description)
 - [You Can't Use This Until You Download More Stuff](https://github.com/ArtskydJ/admesh-parser#you-cant-use-this-until-you-download-more-stuff)
 - [Install](https://github.com/ArtskydJ/admesh-parser#install)
 - [Include](https://github.com/ArtskydJ/admesh-parser#include)
