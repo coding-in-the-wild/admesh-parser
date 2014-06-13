@@ -1,13 +1,15 @@
-﻿#Admesh Parser
+﻿admesh-parser
+=============
 
-##Table of Contents
+[![Build Status](https://travis-ci.org/ArtskydJ/admesh-parser.svg?branch=master)](https://travis-ci.org/ArtskydJ/admesh-parser)
 
-- Description
-- You Can't Use This Until You Download More Stuff
-- Install
-- Include
-- admeshParser(options, cb)
-- Example
+- [Description]
+- [You Can't Use This Until You Download More Stuff](https://github.com/ArtskydJ/admesh-parser#you-cant-use-this-until-you-download-more-stuff)
+- [Install](https://github.com/ArtskydJ/admesh-parser#install)
+- [Include](https://github.com/ArtskydJ/admesh-parser#include)
+- [admeshParser(options, cb)](https://github.com/ArtskydJ/admesh-parser#admeshparseroptions-cb)
+- [Example](https://github.com/ArtskydJ/admesh-parser#example)
+- [License](https://github.com/ArtskydJ/admesh-parser#license)
 
 ##Description
 
@@ -15,7 +17,7 @@ This module returns a function that takes an STL file and returns a JavaScript o
 
 ##You Can't Use This Until You Download More Stuff
 
-To use this module, you will need [admesh](https://sites.google.com/a/varlog.com/www/admesh-htm). This module just parses the output, it does not include the binary.
+To use this module, you will need [admesh](https://sites.google.com/a/varlog.com/www/admesh-htm). This module just parses admesh's output, it does not include admesh. (Well, technically, it does, in the test folder, but it only will work for windows.)
 
 You will also need an STL file to run this on. Two files are included in the 'test' folder.
 
@@ -81,3 +83,7 @@ The options argument can be either a string, or an array of strings.
 	console.log("Max X: " + model.x.max)
 	console.log("Num of facets, before: " + model.facets.overall.before)
 	console.log("Volume: " + model.volume)
+
+##License
+
+[MIT](http://opensource.org/licenses/MIT)
