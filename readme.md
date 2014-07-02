@@ -3,13 +3,13 @@
 
 [![Build Status](https://travis-ci.org/ArtskydJ/admesh-parser.svg?branch=master)](https://travis-ci.org/ArtskydJ/admesh-parser)
 
-- [Description](https://github.com/ArtskydJ/admesh-parser#description)
-- [You Can't Use This Until You Download More Stuff](https://github.com/ArtskydJ/admesh-parser#you-cant-use-this-until-you-download-more-stuff)
-- [Install](https://github.com/ArtskydJ/admesh-parser#install)
-- [Include](https://github.com/ArtskydJ/admesh-parser#include)
-- [admeshParser(options, cb)](https://github.com/ArtskydJ/admesh-parser#admeshparseroptions-cb)
-- [Example](https://github.com/ArtskydJ/admesh-parser#example)
-- [License](https://github.com/ArtskydJ/admesh-parser#license)
+- [Description](#description)
+- [You Can't Use This Until You Download More Stuff](#you-cant-use-this-until-you-download-more-stuff)
+- [Install](#install)
+- [Include](#include)
+- [admeshParser(options, cb)](#admeshparseroptions-cb)
+- [Example](#example)
+- [License](#license)
 
 ##Description
 
