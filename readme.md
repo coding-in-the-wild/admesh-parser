@@ -2,6 +2,7 @@
 =============
 
 [![Build Status](https://travis-ci.org/ArtskydJ/admesh-parser.svg?branch=master)](https://travis-ci.org/ArtskydJ/admesh-parser)
+[![Github Repository](http://img.shields.io/badge/Repository-Github-brightgreen.svg)](https://github.com/ArtskydJ/admesh-parser)
 
 - [Description](#description)
 - [You Can't Use This Until You Download More Stuff](#you-cant-use-this-until-you-download-more-stuff)
