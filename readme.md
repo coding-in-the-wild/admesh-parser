@@ -26,6 +26,8 @@ You will also need an STL file to run this on. Two files are included in the 'te
 
 ##Install
 
+Install with [NPM](http://nodejs.org)
+
 	npm install admesh-parser
 
 ##Include
