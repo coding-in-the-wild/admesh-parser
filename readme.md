@@ -60,8 +60,8 @@ or
 var options = ["C:\\Users\\Me\\Documents\\gear.stl"]
 ```
 or
-```
-var options =  'C:\\Users\\Me\\Documents\\gear.stl'
+```js
+var options =  "C:\\Users\\Me\\Documents\\gear.stl"
 ```
 
 ###cb(err, result)
