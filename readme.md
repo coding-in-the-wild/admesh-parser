@@ -66,7 +66,7 @@ var options =  "C:\\Users\\Me\\Documents\\gear.stl"
 
 ###cb(err, result)
 
-- `err` is null or an `Error` object.
+- `err` is either `null`, or an `Error` object.
 - `result` is an object if there is not an error. It should look like the following:
 
 ```js
