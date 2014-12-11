@@ -34,7 +34,10 @@ Install with [NPM](http://nodejs.org)
 
 ```js
 var AdmeshParser = require('admesh-parser')
-var admeshParser = new AdmeshParser('C:\\Users\\Me\\Documents\\admesh.exe') //Admesh Directory (spaces allowed)
+
+var admeshParser = new AdmeshParser('C:\\Users\\Me\\NoWhiteSpace\\admesh.exe') //Admesh Directory
+var admeshParser = new AdmeshParser('C:\\Users\\Me\\White space\\admesh.exe') //NO THIS WILL NOT WORK! (Note the space.)
+var admeshParser = new AdmeshParser('"C:\\Users\\Me\\White space\\admesh.exe"') //This should work even with the space. (Note the double quotes.)
 ```
 
 ##admeshParser(options, cb)

@@ -1,13 +1,19 @@
-﻿var parser = require("./parser.js")
+﻿var parser = require('./parser.js')
 var cp = require('child_process')
 
-
 module.exports = function AdmeshParser(admeshDir) {
-	return function admeshParser(options, cb) {
-		if (typeof options === "string") options = [options]
+	admeshDir = admeshDir || 'admesh'
+	return function admeshParser(args, cb) {
+		if (typeof args === "string")  args = [args]
+		Array.isArray(args) ?
+			args.unshift(admeshDir) :
+			args = [admeshDir]
 
-		cp.exec('"'+admeshDir+'" '+options.join(' '), function (err, stdout) {
-			cb(err, parser(stdout))
+		cp.exec(args.join(' '), function (err, stdout, stderr) {
+			stdout = stdout.toString()
+			stderr = stderr.toString()
+			err = err || (stderr && new Error(stderr)) || null
+			cb(err, err ? null : parser(stdout))
 		})
 	}
 }

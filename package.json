@@ -1,28 +1,24 @@
 {
   "name": "admesh-parser",
-  "version": "2.0.2",
+  "version": "2.1.3",
   "main": "./index.js",
   "author": {
     "name": "ArtskydJ",
     "email": "josephdykstra@gmail.com"
   },
-  "description": "Parses 3d model file with admesh and returns info about model.",
+  "description": "Runs admesh on an stl file, and calls back with the parsed output.",
   "keywords": [
     "admesh",
     "parse",
-	"3d model",
-	"stl"
+    "3d model",
+    "stl"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ArtskydJ/admesh-parser.git"
   },
   "devDependencies": {
-    "tap": "~0.4.8",
-	"safe-err-msg": "~0.0.3"
-  },
-  "directories": {
-    "test": "test"
+    "tap": "~0.4.8"
   },
   "scripts": {
     "test": "tap ./test/*.js"
