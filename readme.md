@@ -1,36 +1,24 @@
-﻿admesh-parser
-=============
+# admesh-parser
 
 [![Build Status](https://travis-ci.org/ArtskydJ/admesh-parser.svg?branch=master)](https://travis-ci.org/ArtskydJ/admesh-parser)
-[![Github Repository](http://img.shields.io/badge/Repository-Github-brightgreen.svg)](https://github.com/ArtskydJ/admesh-parser)
 
-- [Description](#description)
-- [You Can't Use This Until You Download More Stuff](#you-cant-use-this-until-you-download-more-stuff)
-- [Install](#install)
-- [Include](#include)
-- [admeshParser(options, cb)](#admeshparseroptions-cb)
-	- [options](#options)
-	- [cb(err, result)](#cberr-result)
-- [Example](#example)
-- [License](#license)
-
-##Description
+# description
 
 This module returns a function that takes an STL file and returns a JavaScript object containing information about the file. 
 
-##You Can't Use This Until You Download More Stuff
+# you can't use this until you download more stuff
 
 To use this module, you will need [admesh](https://sites.google.com/a/varlog.com/www/admesh-htm). This module just parses admesh's output, it does not include admesh. (Well, technically, it does, in the test folder, but it only will work for windows.)
 
 You will also need an STL file to run this on. Two files are included in the 'test' folder.
 
-##Install
+# install
 
 Install with [NPM](http://nodejs.org)
 
 	npm install admesh-parser
 
-##Include
+# api
 
 ```js
 var AdmeshParser = require('admesh-parser')
@@ -40,9 +28,9 @@ var admeshParser = new AdmeshParser('C:\\Users\\Me\\White space\\admesh.exe') //
 var admeshParser = new AdmeshParser('"C:\\Users\\Me\\White space\\admesh.exe"') //This should work even with the space. (Note the double quotes.)
 ```
 
-##admeshParser(options, cb)
+# `admeshParser(options, cb)`
 
-###options
+### `options`
 Must be an `Array` or a `String`.
 
 If it is a `string`, it must be the input file directory.
@@ -69,7 +57,7 @@ or
 var options =  "C:\\Users\\Me\\Documents\\gear.stl"
 ```
 
-###cb(err, result)
+### `cb(err, result)`
 
 - `err` is either `null`, or an `Error` object.
 - `result` is an object if there is not an error. It should look like the following:
@@ -94,7 +82,7 @@ var options =  "C:\\Users\\Me\\Documents\\gear.stl"
   normalsFixed: 12 }
 ```
 
-##Example
+# example
 
 ```js
 var AdmeshParser = require('admesh-parser')
@@ -109,6 +97,6 @@ console.log("Num of facets, before: " + model.facets.overall.before)
 console.log("Volume: " + model.volume)
 ```
 
-##License
+# license
 
 [MIT](http://opensource.org/licenses/MIT)
