@@ -1,6 +1,6 @@
 # admesh-parser
 
-[![Build Status](https://travis-ci.org/ArtskydJ/admesh-parser.svg?branch=master)](https://travis-ci.org/ArtskydJ/admesh-parser)
+[![Build Status](https://travis-ci.org/coding-in-the-wild/admesh-parser.svg?branch=master)](https://travis-ci.org/coding-in-the-wild/admesh-parser)
 
 # description
 
