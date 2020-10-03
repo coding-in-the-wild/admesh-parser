@@ -65,6 +65,6 @@ module.exports = function parser(str) { //expects one long string (with or witho
 	} else {
 		var err = new Error("Unparseable string: "+strArr.length+", "+detectedNums.length)
 		err.detectedNums = detectedNums.length
-		return err
-	}	
+		throw err
+	}
 }
