@@ -10,10 +10,14 @@ module.exports = function AdmeshParser(admeshDir) {
 			args = [admeshDir]
 
 		cp.exec(args.join(' '), function (err, stdout, stderr) {
-			stdout = stdout.toString()
 			stderr = stderr.toString()
-			err = err || (stderr && new Error(stderr)) || null
-			cb(err, err ? null : parser(stdout))
+			if (err || stderr) return cb(err || new Error(stderr))
+			try {
+				var result = parser(stdout.toString())
+				return cb(null, result)
+			} catch (err) {
+				cb(err)
+			}
 		})
 	}
 }
