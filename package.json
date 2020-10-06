@@ -18,7 +18,7 @@
     "url": "https://github.com/ArtskydJ/admesh-parser.git"
   },
   "devDependencies": {
-    "tape": "^5.0.1"
+    "tape": "~5.0.1"
   },
   "scripts": {
     "test": "tape ./test/*.js"
