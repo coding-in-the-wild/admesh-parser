@@ -1,8 +1,9 @@
 if (process.platform==='win32') {
+	process.chdir(__dirname)
 	var admeshDir = 'admesh.exe'
 	var Admesh = require('../index.js')
 	var admesh = new Admesh(admeshDir)
-	var test = require('tap').test
+	var test = require('tape')
 
 	var compCubeData =	{
 		"./companion-cube.stl": {
@@ -30,7 +31,7 @@ if (process.platform==='win32') {
 			t.equal(testObj.y.min, goodObj.y.min)
 			t.end()
 		})
-		
+
 		test("MORE NUMBERS "+(prefixString||"this stl file")+" match", function(t) {
 			t.equal(testObj.parts,				goodObj.parts)
 			t.equal(testObj.volume,				goodObj.volume)
@@ -45,7 +46,7 @@ if (process.platform==='win32') {
 		var x = 0
 		Object.keys(compCubeData).forEach(function (dir) {
 			var correctValues = compCubeData[dir]
-			
+
 			admesh(dir, function (err, testObj) {
 				t.notOk(err, "error is falsey"+(err && err.message))
 				compareObjects(testObj, correctValues, "Companion Cube #1")

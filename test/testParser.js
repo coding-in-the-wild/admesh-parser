@@ -1,4 +1,4 @@
-var test = require('tap').test
+var test = require('tape')
 var parser = require("../parser.js")
 
 test("parser returns correct numbers", function(t) {
@@ -26,7 +26,7 @@ test("parser returns correct numbers", function(t) {
 		"Facets reversed       :     2\n"+
 		"Backwards edges       :     0\n"+
 		"Normals fixed         :     12")
-	
+
 	test("parser gets correct sizes", function (t) {
 		t.equal(obj.x.min, -1.334557)
 		t.equal(obj.y.min, -1.377953)
@@ -36,7 +36,7 @@ test("parser returns correct numbers", function(t) {
 		t.equal(obj.z.max,  1.242838)
 		t.end()
 	})
-	
+
 	test("parser gets correct facet statuses (is that a word?)", function(t) {
 		t.equal(obj.facets.overall.before,			3656)
 		t.equal(obj.facets.overall.after,			3656)
@@ -50,7 +50,7 @@ test("parser returns correct numbers", function(t) {
 		t.equal(obj.facets.disconnected .after,		0)
 		t.end()
 	})
-	
+
 	test("parser gets correct processing stats", function(t) {
 		t.equal(obj.parts,				1)
 		t.equal(obj.volume,				10.889216)
@@ -63,6 +63,6 @@ test("parser returns correct numbers", function(t) {
 		t.equal(obj.normalsFixed,		12)
 		t.end()
 	})
-	
+
 	t.end()
 })

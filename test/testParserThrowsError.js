@@ -1,4 +1,4 @@
-﻿var test = require('tap').test
+﻿var test = require('tape')
 var parser = require("../parser.js")
 
 test("parser throws error for not enough args", function (t) {
